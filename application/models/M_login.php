@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_login extends CI_Model {
 
-    /*public function checkUser($email, $password)
+    public function checkUser($email, $password)
 	{
 		$query = $this->db->query("select * from utilisateur where email='$email' and motdepasse='$password'");
 		$row = $query->row_array();
@@ -14,5 +14,5 @@ class M_login extends CI_Model {
 			return true;
 		}
 		return false;
-	}	*/	
+	}	
 }

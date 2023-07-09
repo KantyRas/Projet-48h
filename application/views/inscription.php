@@ -31,15 +31,22 @@
                 </div>
                 <h4>New here?</h4>
                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-                <form class="pt-3">
+                <form class="pt-3" action="<?php echo base_url('C_inscription/newUser')?>" method="post" enctype="multipart/form-data">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username">
+                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nom" name="nom">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email">
+                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Prénom" name="prenom">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                    <label for=""><h5>Photo</h5></label>
+                    <input type="file" class="form-control form-control-lg" name="files[]" multiple>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="password" required>
                   </div>
                   <div class="mb-4">
                     <div class="form-check">
