@@ -45,7 +45,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h1>
+            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold"><?php echo $prenom?></span></h1>
             <h3 class="welcome-sub-text">Your performance summary this week </h3>
           </li>
         </ul>
@@ -88,18 +88,18 @@
           </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="<?php echo base_url()?>assets/templateAdmin/images/faces/face8.jpg" alt="Profile image"> </a>
+            <?php $path1 = "assets/img/".$photo;?>
+              <img class="img-xs rounded-circle" src="<?php echo base_url($path1)?>" alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="<?php echo base_url()?>assets/templateAdmin/images/faces/face8.jpg" alt="Profile image">
-                <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
+                <p class="mb-1 mt-3 font-weight-semibold"><?php echo $nom?> <?php echo $prenom?></p>
+                <p class="fw-light text-muted mb-0"><?php echo $email?></p>
               </div>
               <a class="dropdown-item" href="#"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
               <a class="dropdown-item" href="#"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
               <a class="dropdown-item" href="#"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
               <a class="dropdown-item" href="#"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
-              <a class="dropdown-item" href="#"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+              <a class="dropdown-item" href="<?php echo base_url('C_login/disconnect')?>"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
             </div>
           </li>
         </ul>
@@ -139,22 +139,22 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item nav-category">NAV TITLE</li>
+          <li class="nav-item nav-category">BASE</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="menu-icon mdi mdi-floor-plan"></i>
-              <span class="menu-title">MENU TITLE</span>
+              <span class="menu-title">CRUD</span>
               <i class="menu-arrow"></i> 
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#pages/ui-features/buttons.html">Link1</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#pages/ui-features/dropdowns.html">Link2</a></li>
-                <li class="nav-item"> <a class="nav-link" href="#pages/ui-features/typography.html">Link3</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('C_admin/loadDetailRegime')?>">Regimes</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('C_admin/loadDetailSport')?>">Activités</a></li>
+                <li class="nav-item"> <a class="nav-link" href="#pages/ui-features/typography.html">Autres</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item nav-category">Nav Title2</li>
+          <li class="nav-item nav-category">Pages</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
               <i class="menu-icon mdi mdi-card-text-outline"></i>
@@ -182,12 +182,12 @@
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
               <i class="menu-icon mdi mdi-table"></i>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Validation</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="#pages/tables/basic-table.html">Basic table</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('C_admin/loadValidationCodeAttente')?>">Validation code client</a></li>
               </ul>
             </div>
           </li>
@@ -206,7 +206,7 @@
           </li>
           <li class="nav-item nav-category">help</li>
           <li class="nav-item">
-            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
+            <a class="nav-link" href="#http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
               <i class="menu-icon mdi mdi-file-document"></i>
               <span class="menu-title">Documentation</span>
             </a>
