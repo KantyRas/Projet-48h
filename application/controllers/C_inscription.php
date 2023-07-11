@@ -11,11 +11,13 @@ class C_inscription extends CI_Controller {
         $prenom = $this->input->post('prenom');
         $email = $this->input->post('email');
         $password = $this->input->post('password');
+        $contact = $this->input->post('contact');
+        $adresse = $this->input->post('adresse');
         $files['files'] = $_FILES['files'];
         $this->load->model('M_inscription');
 		try{
             $this->M_inscription->checkPassword($password);
-			$this->M_inscription->insertNewUser($nom,$prenom, $files,$email, $password );
+			$this->M_inscription->insertNewUser($nom,$prenom, $files,$email, $password,$contact,$adresse);
             redirect("Welcome/index");
         }
         catch(Exception $e){

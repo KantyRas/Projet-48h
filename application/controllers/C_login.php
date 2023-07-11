@@ -11,12 +11,12 @@ class C_login extends CI_Controller {
     }
 
     public function loadUserPage($data){
-        $this->load->view('accueil');
-		$this->load->view('content',$data);
+        $this->load->view('accueil',$data);
+		$this->load->view('content');
 		$this->load->view('footer');
     }
     public function loadAdminPage($data){
-        $this->load->view('accueilAdmin');
+        $this->load->view('accueilAdmin',$data);
 		$this->load->view('contentAdmin',$data);
 		$this->load->view('footerAdmin');
     }

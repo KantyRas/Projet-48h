@@ -33,14 +33,20 @@
                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
                 <form class="pt-3" action="<?php echo base_url('C_inscription/newUser')?>" method="post" enctype="multipart/form-data">
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Nom" name="nom">
+                    <input type="text" class="form-control form-control-lg" placeholder="Nom" name="nom">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Prénom" name="prenom">
+                    <input type="text" class="form-control form-control-lg" placeholder="Prénom" name="prenom">
                   </div>
                   <div class="form-group">
                     <label for=""><h5>Photo</h5></label>
                     <input type="file" class="form-control form-control-lg" name="files[]" multiple>
+                  </div>
+                  <div class="form-group">
+                    <input type="number" class="form-control form-control-lg"  placeholder="Contact" name="contact">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-lg" placeholder="Adresse" name="adresse">
                   </div>
                   <div class="form-group">
                     <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" name="email" required>

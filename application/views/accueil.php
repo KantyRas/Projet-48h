@@ -8,6 +8,7 @@
     <!-- base:css -->
     <link rel="stylesheet" href="<?php echo base_url()?>assets/template/vendors/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>assets/template/vendors/base/vendor.bundle.base.css">
+    <link href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- endinject -->
     <!-- plugin css for this page -->
     <!-- End plugin css for this page -->
@@ -72,16 +73,17 @@
             <ul class="navbar-nav navbar-nav-right">
                 <li class="nav-item nav-profile dropdown">
                   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                    <span class="nav-profile-name">Johnson</span>
+                    <span class="nav-profile-name"><?php echo $prenom;?></span>
                     <span class="online-status"></span>
-                    <img src="<?php echo base_url()?>assets/template/images/faces/face28.png" alt="profile"/>
+                    <?php $path1 = "assets/img/".$photo;?>
+                    <img src="<?php echo base_url($path1);?>" alt="profile"/>
                   </a>
                   <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                       <a class="dropdown-item">
                         <i class="mdi mdi-settings text-primary"></i>
                         Settings
                       </a>
-                      <a class="dropdown-item">
+                      <a class="dropdown-item" href="<?php echo base_url('C_login/disconnect')?>">
                         <i class="mdi mdi-logout text-primary"></i>
                         Logout
                       </a>
@@ -98,67 +100,30 @@
         <div class="container">
             <ul class="nav page-navigation">
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="<?php echo base_url('C_user/loadHome')?>">
                   <i class="mdi mdi-file-document-box menu-icon"></i>
-                  <span class="menu-title">Dashboard</span>
+                  <span class="menu-title">Home</span>
                 </a>
               </li>
               <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="mdi mdi-cube-outline menu-icon"></i>
-                    <span class="menu-title">UI Elements</span>
+                    <span class="menu-title">Profil & suggestions</span>
                     <i class="menu-arrow"></i>
                   </a>
                   <div class="submenu">
                       <ul>
-                          <li class="nav-item"><a class="nav-link" href="#">Buttons</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Typography</a></li>
+                          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('C_user/loadListeRegime')?>">Voir regime</a></li>
+                          <li class="nav-item"><a class="nav-link" href="<?php echo base_url('C_profil/loadAjoutProfileUtilisateur')?>">Completion Profil</a></li>
                       </ul>
                   </div>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-chart-areaspline menu-icon"></i>
-                    <span class="menu-title">Form Elements</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-finance menu-icon"></i>
-                    <span class="menu-title">Charts</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?php echo base_url('C_user/loadListeCode')?>" class="nav-link">
                     <i class="mdi mdi-grid menu-icon"></i>
-                    <span class="menu-title">Tables</span>
+                    <span class="menu-title">Voir code</span>
                     <i class="menu-arrow"></i>
                   </a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-emoticon menu-icon"></i>
-                    <span class="menu-title">Icons</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="mdi mdi-codepen menu-icon"></i>
-                    <span class="menu-title">Sample Pages</span>
-                    <i class="menu-arrow"></i>
-                  </a>
-                  <div class="submenu">
-                      <ul class="submenu-item">
-                          <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Login 2</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Register 2</a></li>
-                          <li class="nav-item"><a class="nav-link" href="#">Lockscreen</a></li>
-                      </ul>
-                  </div>
               </li>
               <li class="nav-item">
                   <a href="#" class="nav-link">
